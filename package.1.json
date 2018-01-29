@@ -1,0 +1,35 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "node_modules/.bin/webpack",
+    "webpack-dev": "node_modules/.bin/webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielbabilyan/project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielbabilyan/project/issues"
+  },
+  "homepage": "https://github.com/danielbabilyan/project#readme",
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.38",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.9",
+    "html-loader": "^0.5.5",
+    "http-server": "^0.11.1",
+    "jquery": "^3.3.1",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.20.1",
+    "vue": "^2.5.13",
+    "webpack": "^3.10.0"
+  }
+}

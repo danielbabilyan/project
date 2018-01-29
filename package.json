@@ -1,0 +1,53 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "node_modules/.bin/webpack --p",
+    "webpack-dev": "node_modules/.bin/webpack --watch -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielbabilyan/project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielbabilyan/project/issues"
+  },
+  "homepage": "https://github.com/danielbabilyan/project#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "browserify": "^13.1.1",
+    "css-loader": "^0.28.7",
+    "ejs": "^2.5.2",
+    "es6-promise": "^4.1.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.10",
+    "html-loader": "^0.5.1",
+    "less": "^2.7.1",
+    "less-loader": "^4.0.5",
+    "lodash": "^4.17.4",
+    "lodash.assignin": "^4.2.0",
+    "lodash.foreach": "^4.5.0",
+    "perfect-scrollbar": "^0.6.14",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "router5": "^5.7.0",
+    "style-loader": "^0.19.1",
+    "through2": "^2.0.1",
+    "uglifyjs-webpack-plugin": "^1.1.4",
+    "uuid": "^3.1.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vue": "^2.3.4",
+    "webpack": "^3.6.0",
+    "babel-register": "^6.26.0"
+  }
+}
