@@ -24,7 +24,7 @@ module.exports = {
             {
                 test: /\.html$/,
                 include: [
-                    path.resolve(__dirname, "src/components"),
+                    path.resolve(__dirname, "src"),
                 ],
                 use: {
                     loader: 'html-loader',
@@ -35,7 +35,7 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                include: path.resolve(__dirname, "src/components"),
+                include: path.resolve(__dirname, "src"),
                 use: [
                     {
                         loader: "style-loader",

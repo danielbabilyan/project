@@ -1,0 +1,93 @@
+body {
+    font-family: Arial;
+}
+
+.md-input {
+    position: relative;
+    padding: 23px 0 16px 0;
+}
+
+.md-input-with-icon {
+    padding-left: 35px;
+}
+
+.md-input input {
+    width: 100%;
+    display: block;
+    border: 0;
+    outline: 0;
+    font-size: 14px;
+    color: #000;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.md-input label {
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    top: 24px;
+    z-index: 1;
+    font-weight: 400;
+    cursor: text;
+    transition: all .5s;
+}
+
+.md-input label.with-icon {
+    padding-left: 35px;
+}
+
+.md-input label.focus {
+    font-size: 12px;
+    top: 9px;
+    color:blue;
+}
+
+.md-input span {
+    font-size: 0;
+    position: absolute;
+    text-align: right;
+    left: 0;
+    top: 46px;
+    font-weight: 400;
+    width: 100%;
+    color: red;
+    transition: all .5s;
+}
+
+.md-input span::after { 
+    content: "";
+    width: 100%;
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: -3px;
+    right: 0px;
+    background-color: #888;
+    transition: all .2s;
+}
+
+.md-input span.with-icon::after {
+    width: calc(~'100% - 35px');
+}
+
+.md-input span.error {
+    font-size: 12px;
+}
+
+.md-input span.error::after { 
+    background-color: #ff0000;
+}
+
+.md-input span.focused::after { 
+    height: 3px;
+}
+
+.md-input i { 
+    position: absolute;
+    top: 18px;
+    left: 0px;
+    font-size: 27px;
+    z-index: 3;
+}

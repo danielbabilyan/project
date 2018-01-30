@@ -1,3 +1,24 @@
 <div>
-    LOGIN {{ test }}
+    <md-input
+        @update-input-data="updateInputData"
+        @update-invalid-inputs-list="updateInvalidInputsList"
+        :submit-button-is-clicked="submit_button_is_clicked"
+        :regex="/^\s*\S\S/"
+        regex-error="This is not name!"
+        placeholder="Username"
+        input-data-name="username"
+        icon="account_box">
+    </md-input>
+    <md-input
+        @update-input-data="updateInputData"
+        @update-invalid-inputs-list="updateInvalidInputsList"
+        :submit-button-is-clicked="submit_button_is_clicked"
+        :regex="/^\s*\S\S/"
+        regex-error="This is not name!"
+        placeholder="Password"
+        input-data-name="password"
+        icon="keyboard_voice">
+    </md-input>
+    <button @click="click">DONE</button>
+    {{ invalid_inputs_list }}
 </div>
