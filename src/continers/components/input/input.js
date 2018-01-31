@@ -40,6 +40,9 @@ module.exports = {
             if (this.dirty) {
                 this.checkInput();
             }
+            else {
+                this.checkInput(true);
+            }
         },
         onBlur: function () {
             this.is_focused = false;

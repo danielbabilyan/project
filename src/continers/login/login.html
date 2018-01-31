@@ -8,7 +8,7 @@
             regex-error="This is not name!"
             placeholder="Username"
             input-data-name="username"
-            icon="account_box">
+            icon="account_circle">
         </input->
         <input-
             @update-input-data="updateInputData"
@@ -18,13 +18,13 @@
             regex-error="This is not name!"
             placeholder="Password"
             input-data-name="password"
-            icon="keyboard_voice">
+            icon="lock">
         </input->
         <button-
             @click="click"
-            text="DONE"
-            icon="keyboard_voice"
-            
+            :disabled="(this.invalid_inputs_list.length > 0)"
+            text="LOGIN"
+            icon="done"
             style="margin-top: 20px">
         </button->
     </div>

@@ -1,4 +1,4 @@
-<div @click="onClick" class="button">
+<div @click="onClick" :class="['button', { 'disabled': disabled }]">
     <i class="material-icons">{{ icon }}</i>
     <span>{{ text }}</span>
 </div>
