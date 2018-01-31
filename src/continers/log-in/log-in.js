@@ -1,11 +1,10 @@
-require('../material-icons.less');
+require('./log-in.less');
 
-const template = require('./app.html');
-const md_input = require('./md-input/md-input');
+const template = require('./log-in.html');
+const md_input = require('../components/md-input/md-input');
 
-module.exports ={    
+module.exports = {    
     template,
-    el: '#app',
     data: function () {
         return {
             input: {
