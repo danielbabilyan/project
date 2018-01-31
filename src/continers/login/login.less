@@ -8,9 +8,19 @@
 
 .login .logo {
     display: block;
-    text-align: center;
-    font-size: 120px;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+
+    @media screen and (min-width: 650px) {
+        margin-bottom: 20px;
+        width: 100px;
+        height: 100px;
+    }
 }
 
 .login .login-box {

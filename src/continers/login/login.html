@@ -1,11 +1,12 @@
 <div class="login">
-    <i class="material-icons logo">brightness_1</i>
+    <i class="logo" style="background-image: url('./images/logo.png')"></i>
     <div class="login-box">
         <div class="login-box-content">
             <input-
                 @update-input-data="updateInputData"
                 @update-invalid-inputs-list="updateInvalidInputsList"
                 :submit-button-is-clicked="submit_button_is_clicked"
+                :regex="/^[a-z0-9_-]{3,15}$/"
                 regex-error="The username is invalid!"
                 placeholder="Username"
                 input-data-name="username"
