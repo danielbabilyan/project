@@ -1,6 +1,6 @@
-require('./md-input.less');
+require('./input.less');
 
-const template = require('./md-input.html');
+const template = require('./input.html');
 
 module.exports = {
     template,

@@ -1,7 +1,8 @@
-require('./log-in.less');
+require('./login.less');
 
-const template = require('./log-in.html');
-const md_input = require('../components/md-input/md-input');
+const template = require('./login.html');
+const input = require('../components/input/input');
+const button = require('../components/button/button');
 
 module.exports = {    
     template,
@@ -36,6 +37,7 @@ module.exports = {
         },
     },
     components: {
-        'md-input': md_input,
+        'input-': input,
+        'button-': button,
     },
 }
