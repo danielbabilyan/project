@@ -50,14 +50,14 @@ module.exports = {
             this.checkInput();
         },
         checkInput: function (silent_error) {
-            if (this.regex) {
-                if (!this.value) {
-                    if (!silent_error) {
-                        this.input_msg = 'Required field!';
-                    }
-                    this.updateInvalidInputsList(true);
+            if (!this.value) {
+                if (!silent_error) {
+                    this.input_msg = 'Required field!';
                 }
-                else {
+                this.updateInvalidInputsList(true);
+            }
+            else {
+                if (this.regex) {
                     var regex = new RegExp(this.regex);
                     if (!regex.test(this.value)) {
                         if (!silent_error) {
@@ -69,6 +69,10 @@ module.exports = {
                         this.input_msg = null;
                         this.updateInvalidInputsList(false);
                     }
+                }
+                else {
+                    this.input_msg = null;
+                    this.updateInvalidInputsList(false);
                 }
             }
         },
