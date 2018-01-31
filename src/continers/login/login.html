@@ -1,29 +1,32 @@
 <div class="login">
-    <div class="login-padding">
-        <input-
-            @update-input-data="updateInputData"
-            @update-invalid-inputs-list="updateInvalidInputsList"
-            :submit-button-is-clicked="submit_button_is_clicked"
-            regex-error="The username is invalid!"
-            placeholder="Username"
-            input-data-name="username"
-            icon="account_circle">
-        </input->
-        <input-
-            @update-input-data="updateInputData"
-            @update-invalid-inputs-list="updateInvalidInputsList"
-            :submit-button-is-clicked="submit_button_is_clicked"
-            regex-error="The password is invalid!"
-            placeholder="Password"
-            input-data-name="password"
-            icon="lock">
-        </input->
-        <button-
-            @click="click"
-            :disabled="(this.invalid_inputs_list.length > 0)"
-            text="LOGIN"
-            icon="done"
-            style="margin-top: 20px">
-        </button->
+    <i class="material-icons logo">brightness_1</i>
+    <div class="login-box">
+        <div class="login-box-content">
+            <input-
+                @update-input-data="updateInputData"
+                @update-invalid-inputs-list="updateInvalidInputsList"
+                :submit-button-is-clicked="submit_button_is_clicked"
+                regex-error="The username is invalid!"
+                placeholder="Username"
+                input-data-name="username"
+                icon="account_circle">
+            </input->
+            <input-
+                @update-input-data="updateInputData"
+                @update-invalid-inputs-list="updateInvalidInputsList"
+                :submit-button-is-clicked="submit_button_is_clicked"
+                regex-error="The password is invalid!"
+                placeholder="Password"
+                input-data-name="password"
+                icon="lock">
+            </input->
+            <button-
+                @click="click"
+                :disabled="(this.invalid_inputs_list.length > 0)"
+                text="LOGIN"
+                icon="done"
+                style="margin-top: 20px">
+            </button->
+        </div>
     </div>
 </div>
