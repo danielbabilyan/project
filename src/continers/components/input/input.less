@@ -1,89 +1,106 @@
 .md-input {
     position: relative;
-    padding: 23px 0 16px 0;
+    font-size: 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px 0;
 }
 
-.md-input-with-icon {
-    padding-left: 35px;
+.md-input.with-icon {
+    padding-left: 30px;
 }
 
 .md-input input {
-    width: 100%;
-    display: block;
-    border: 0;
+    border: none;
     outline: 0;
-    font-size: 14px;
-    color: #000;
-    background: transparent;
-    position: relative;
-    z-index: 2;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    display: block;
+    font-size: 16px;
+    font-family: Helvetica,Arial,sans-serif;
+    margin: 0;
+    padding: 4px 0;
+    width: 100%;
+    background: 0 0;
+    text-align: left;
+    color: inherit;
+}
+
+.md-input input.error {
+    border-color: #d50000;
 }
 
 .md-input label {
-    font-size: 14px;
-    position: absolute;
+    bottom: 0;
+    color: rgba(0,0,0,.26);
+    font-size: 16px;
     left: 0;
+    right: 0;
+    pointer-events: none;
+    position: absolute;
+    display: block;
     top: 24px;
-    z-index: 1;
-    font-weight: 400;
-    cursor: text;
-    transition: all .5s;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    transition-duration: .2s;
 }
 
-.md-input label.with-icon {
-    padding-left: 35px;
+.md-input label:after {
+    background-color: #3f51b5;
+    bottom: 20px;
+    content: '';
+    height: 2px;
+    left: 45%;
+    position: absolute;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    visibility: hidden;
+    width: 10px;
 }
 
 .md-input label.focus {
+    color: #3f51b5;
     font-size: 12px;
-    top: 9px;
-    color:blue;
+    top: 4px;
+    visibility: visible;
+}
+
+.md-input label.focus:after {
+    left: 0px;
+    visibility: visible;
+    width: 100%;
+}
+
+.md-input label.focus.error {
+    color: #d50000;
+}
+
+.md-input label.error:after {
+    background-color: #d50000;
+}
+
+label.with-icon {
+    left: 30px;
+}
+
+label.with-icon.focus:after {
+    width: calc(~'100% - 30px');
 }
 
 .md-input span {
-    font-size: 0;
+    color: #d50000;
     position: absolute;
-    text-align: right;
-    left: 0;
-    top: 46px;
-    font-weight: 400;
-    width: 100%;
-    color: red;
-    transition: all .5s;
-}
-
-.md-input span::after { 
-    content: "";
-    width: 100%;
-    display: block;
-    height: 1px;
-    position: absolute;
-    top: -3px;
-    right: 0px;
-    background-color: #888;
-    transition: all .2s;
-}
-
-.md-input span.with-icon::after {
-    width: calc(~'100% - 35px');
-}
-
-.md-input span.error {
     font-size: 12px;
+    margin-top: 3px;
+    display: block;
 }
 
-.md-input span.error::after { 
-    background-color: #ff0000;
-}
-
-.md-input span.focused::after { 
-    height: 3px;
-}
-
-.md-input i { 
+.md-input i {
     position: absolute;
-    top: 18px;
+    top: 23px;
     left: 0px;
-    font-size: 27px;
-    z-index: 3;
 }

@@ -6,7 +6,7 @@ module.exports = {
     template,
     data: function () {
         return {
-            value: '',
+            value: null,
             input_msg: null,
             dirty: false,
             is_focused: false,
@@ -48,7 +48,7 @@ module.exports = {
         },
         checkInput: function (silent_error) {
             if (this.regex) {
-                if (!this.value.length > 0) {
+                if (!this.value) {
                     if (!silent_error) {
                         this.input_msg = 'Required field!';
                     }

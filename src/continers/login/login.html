@@ -1,29 +1,31 @@
 <div class="login">
-    <input-
-        @update-input-data="updateInputData"
-        @update-invalid-inputs-list="updateInvalidInputsList"
-        :submit-button-is-clicked="submit_button_is_clicked"
-        :regex="/^\s*\S\S/"
-        regex-error="This is not name!"
-        placeholder="Username"
-        input-data-name="username"
-        icon="account_box">
-    </input->
-    <input-
-        @update-input-data="updateInputData"
-        @update-invalid-inputs-list="updateInvalidInputsList"
-        :submit-button-is-clicked="submit_button_is_clicked"
-        :regex="/^\s*\S\S/"
-        regex-error="This is not name!"
-        placeholder="Password"
-        input-data-name="password"
-        icon="keyboard_voice">
-    </input->
-    <button-
-        @click="click"
-        text="DONE"
-        icon="keyboard_voice"
-        
-        style="margin-top: 20px">
-    </button->
+    <div class="login-padding">
+        <input-
+            @update-input-data="updateInputData"
+            @update-invalid-inputs-list="updateInvalidInputsList"
+            :submit-button-is-clicked="submit_button_is_clicked"
+            :regex="/^\s*\S\S/"
+            regex-error="This is not name!"
+            placeholder="Username"
+            input-data-name="username"
+            icon="account_box">
+        </input->
+        <input-
+            @update-input-data="updateInputData"
+            @update-invalid-inputs-list="updateInvalidInputsList"
+            :submit-button-is-clicked="submit_button_is_clicked"
+            :regex="/^\s*\S\S/"
+            regex-error="This is not name!"
+            placeholder="Password"
+            input-data-name="password"
+            icon="keyboard_voice">
+        </input->
+        <button-
+            @click="click"
+            text="DONE"
+            icon="keyboard_voice"
+            
+            style="margin-top: 20px">
+        </button->
+    </div>
 </div>
