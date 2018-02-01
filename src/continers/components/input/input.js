@@ -18,11 +18,6 @@ module.exports = {
         this.checkInput(true);
     },
     watch: {
-        type: function (value) {
-            if (!type) {
-                this.type = 'text';
-            }
-        },
         submitButtonIsClicked: function (value) {
             if (value) {
                 this.dirty = true;
@@ -31,6 +26,14 @@ module.exports = {
         },
     },
     computed: {
+        inputType: function () {
+            if (this.type) {
+                return this.type;
+            }
+            else {
+                return 'text'; 
+            }
+        },
         labelLocationUp: function () {
             if ((this.is_focused) || (this.value)) {
                 return true;
