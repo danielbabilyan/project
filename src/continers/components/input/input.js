@@ -13,11 +13,16 @@ module.exports = {
             invalid_regex: [],
         }
     },
-    props: ['submitButtonIsClicked', 'inputDataName', 'checkRegex', 'placeholder', 'icon'],
+    props: ['submitButtonIsClicked', 'inputDataName', 'checkRegex', 'type', 'placeholder', 'icon'],
     created: function () {
         this.checkInput(true);
     },
     watch: {
+        type: function (value) {
+            if (!type) {
+                this.type = 'text';
+            }
+        },
         submitButtonIsClicked: function (value) {
             if (value) {
                 this.dirty = true;
