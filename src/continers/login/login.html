@@ -6,8 +6,10 @@
                 @update-input-data="updateInputData"
                 @update-invalid-inputs-list="updateInvalidInputsList"
                 :submit-button-is-clicked="submit_button_is_clicked"
-                :regex="/^[a-z0-9_-]{3,15}$/"
-                regex-error="The username is invalid!"
+                :check-regex="[
+                    { regex: /\S+@\S+\.\S+/, regex_msg: 'email error' },
+                    { regex: /[a-z]+/, regex_msg: 'emapy error' },
+                ]"
                 placeholder="Username"
                 input-data-name="username"
                 icon="account_circle">
@@ -16,7 +18,6 @@
                 @update-input-data="updateInputData"
                 @update-invalid-inputs-list="updateInvalidInputsList"
                 :submit-button-is-clicked="submit_button_is_clicked"
-                regex-error="The password is invalid!"
                 placeholder="Password"
                 input-data-name="password"
                 icon="lock">

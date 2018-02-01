@@ -6,13 +6,14 @@ module.exports = {
     template,
     data: function () {
         return {
-            value: null,
+            value: '',
             input_msg: null,
             dirty: false,
             is_focused: false,
+            invalid_regex: [],
         }
     },
-    props: ['submitButtonIsClicked', 'inputDataName', 'regex', 'regexError', 'placeholder', 'icon'],
+    props: ['submitButtonIsClicked', 'inputDataName', 'checkRegex', 'placeholder', 'icon'],
     created: function () {
         this.checkInput(true);
     },
@@ -50,30 +51,30 @@ module.exports = {
             this.checkInput();
         },
         checkInput: function (silent_error) {
-            if (!this.value) {
-                if (!silent_error) {
-                    this.input_msg = 'Required field!';
-                }
-                this.updateInvalidInputsList(true);
-            }
-            else {
-                if (this.regex) {
-                    var regex = new RegExp(this.regex);
+            if (this.checkRegex) {
+                for (var i = 0; i < this.checkRegex.length; i++) {
+                    var regex = new RegExp(this.checkRegex[i].regex);
                     if (!regex.test(this.value)) {
+                        this.invalid_regex.push(i);
                         if (!silent_error) {
-                            this.input_msg = this.regexError;
+                            this.input_msg = this.checkRegex[i].regex_msg;
                         }
                         this.updateInvalidInputsList(true);
+                        console.log(this.checkRegex[i].regex_msg);
                     }
                     else {
-                        this.input_msg = null;
-                        this.updateInvalidInputsList(false);
+                        this.invalid_regex.splice(this.invalid_regex.indexOf(i), 1);
+                        if (!this.invalid_regex.length > 0) {
+                            this.input_msg = null;
+                            this.updateInvalidInputsList(false);
+                            console.log('ok');
+                        }
                     }
                 }
-                else {
-                    this.input_msg = null;
-                    this.updateInvalidInputsList(false);
-                }
+            }
+            else {
+                this.input_msg = null;
+                this.updateInvalidInputsList(false);
             }
         },
         updateInputData: function () {
