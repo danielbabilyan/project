@@ -7,8 +7,9 @@
                 @update-invalid-inputs-list="updateInvalidInputsList"
                 :submit-button-is-clicked="submit_button_is_clicked"
                 :check-regex="[
-                    { regex: /\S+@\S+\.\S+/, regex_msg: 'email error' },
-                    { regex: /[a-z]+/, regex_msg: 'emapy error' },
+                    { regex: /^.{4,}$/, regex_msg: 'Username must contain at least 4 characters' },
+                    { regex: /^.+$/, regex_msg: 'You forgot to enter a username' },
+                    { regex: /^[a-zA-Z1-9_]*$/, regex_msg: 'Username is not valid' },
                 ]"
                 placeholder="Username"
                 input-data-name="username"
@@ -18,6 +19,11 @@
                 @update-input-data="updateInputData"
                 @update-invalid-inputs-list="updateInvalidInputsList"
                 :submit-button-is-clicked="submit_button_is_clicked"
+                :check-regex="[
+                    { regex: /^.{8,}$/, regex_msg: 'Password must contain at least 8 characters' },
+                    { regex: /^.+$/, regex_msg: 'You forgot to enter a password' },
+                    { regex: /^[a-zA-Z1-9_]*$/, regex_msg: 'Password is not valid' },
+                ]"
                 placeholder="Password"
                 input-data-name="password"
                 icon="lock">

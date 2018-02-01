@@ -54,27 +54,26 @@ module.exports = {
             if (this.checkRegex) {
                 for (var i = 0; i < this.checkRegex.length; i++) {
                     var regex = new RegExp(this.checkRegex[i].regex);
-                    if (!regex.test(this.value)) {
-                        this.invalid_regex.push(i);
+                    if (regex.test(this.value)) {
+                        if (this.invalid_regex.includes(i)) {
+                            this.invalid_regex.splice(this.invalid_regex.indexOf(i), 1);
+                        }
+                        if (!this.invalid_regex.length > 0) {
+                            this.input_msg = null;
+                            this.updateInvalidInputsList(false);
+                        }
+                    }
+                    else {
+                        if (!this.invalid_regex.includes(i)) {
+                            this.invalid_regex.push(i);
+                        }
                         if (!silent_error) {
                             this.input_msg = this.checkRegex[i].regex_msg;
                         }
                         this.updateInvalidInputsList(true);
-                        console.log(this.checkRegex[i].regex_msg);
-                    }
-                    else {
-                        this.invalid_regex.splice(this.invalid_regex.indexOf(i), 1);
-                        if (!this.invalid_regex.length > 0) {
-                            this.input_msg = null;
-                            this.updateInvalidInputsList(false);
-                            console.log('ok');
-                        }
                     }
                 }
-            }
-            else {
-                this.input_msg = null;
-                this.updateInvalidInputsList(false);
+                
             }
         },
         updateInputData: function () {
