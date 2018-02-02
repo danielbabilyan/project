@@ -3,6 +3,7 @@ require('./login.less');
 const template = require('./login.html');
 const input = require('../components/input/input');
 const button = require('../components/button/button');
+const copyright = require('../components/copyright/copyright');
 
 module.exports = {    
     template,
@@ -39,5 +40,6 @@ module.exports = {
     components: {
         'input-': input,
         'button-': button,
+        'copyright-': copyright,
     },
 }

@@ -2,6 +2,7 @@
     <i class="logo" style="background-image: url('./images/logo.png')"></i>
     <div class="login-box">
         <div class="login-box-content">
+            <h1>Login to system</h1>
             <input-
                 @update-input-data="updateInputData"
                 @update-invalid-inputs-list="updateInvalidInputsList"
@@ -28,13 +29,17 @@
                 input-data-name="password"
                 icon="lock">
             </input->
-            <button-
-                @click="click"
-                :disabled="(this.invalid_inputs_list.length > 0)"
-                text="LOGIN"
-                icon="done"
-                style="margin-top: 20px">
-            </button->
+            <div class="button">
+                <button-
+                    @click="click"
+                    :disabled="(this.invalid_inputs_list.length > 0)"
+                    text="LOGIN"
+                    icon="done">
+                </button->
+            </div>
         </div>
+    </div>
+    <div class="copyright">
+        <copyright-></copyright->
     </div>
 </div>

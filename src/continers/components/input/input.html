@@ -1,6 +1,6 @@
-<div :class="['md-input', { 'with-icon': icon }]">
+<div :class="['component-input', { 'with-icon': icon }]">
     <input @focus="onFocus" @input="onInput" @blur="onBlur" v-model="value" :class="{ 'error': input_msg }" :type="inputType" />
     <label :class="[{ 'empty': labelLocationUp }, { 'focus': is_focused }, { 'error': input_msg }, { 'with-icon': icon }]">{{ placeholder }}</label>
     <span>{{ input_msg }}</span>
-    <i class="material-icons">{{ icon }}</i>
+    <i v-show="icon" class="material-icons">{{ icon }}</i>
 </div>
