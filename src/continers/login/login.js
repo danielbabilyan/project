@@ -37,6 +37,7 @@ module.exports = {
                     success: function (data) {
                         if (data.length > 0) {
                             self.user_data = data;
+                            self.$emit('login', data);
                         }
                         else {
                             self.invalid_inputs_list = ['password'];

@@ -4,10 +4,12 @@ const template = require('./button.html');
 
 module.exports = {
     template,
-    props: ['text', 'icon', 'disabled'],
+    props: ['text', 'icon', 'disabled', 'loading'],
     methods: {
         onClick: function () {
-            this.$emit('click');
+            if (!this.loading) {
+                this.$emit('click');
+            }
         },
     },
 }

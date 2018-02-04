@@ -8,6 +8,16 @@ const login = require('./continers/login/login');
 module.exports = {    
     template,
     el: '#app',
+    data: function () {
+        return {
+            login_data: null,
+        }
+    },
+    methods: {
+        loginData: function (data) {
+            this.login_data = data;
+        },
+    },
     components: {
         'login-': login,
     },

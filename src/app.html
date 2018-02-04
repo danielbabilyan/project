@@ -1,3 +1,6 @@
 <div>
-    <login-></login->
+    <login- v-if="!login_data" @login="loginData"></login->
+    <div v-if="login_data">
+        {{ login_data }}
+    </div>
 </div>

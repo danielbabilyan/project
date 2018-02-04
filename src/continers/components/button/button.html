@@ -1,4 +1,4 @@
-<div @click="onClick" :class="['component-button', { 'disabled': disabled }]">
-    <i class="material-icons">{{ icon }}</i>
-    <span>{{ text }}</span>
+<div @click="onClick" :class="['component-button', { 'disabled': disabled }, { 'loading-mode': loading }]">
+    <i class="material-icons">{{ !loading ? icon : 'autorenew' }}</i>
+    <span v-show="!loading">{{ text }}</span>
 </div>

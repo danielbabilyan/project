@@ -1,7 +1,6 @@
 <div class="login">
     <i class="logo" style="background-image: url('./images/logo.png')"></i>
     <div class="login-box">
-        <div v-show="loading" class="loading">asd</div>
         <div class="login-box-content">
             <h1>Login to system</h1>
             <input-
@@ -36,6 +35,7 @@
                 <button-
                     @click="click"
                     :disabled="(this.invalid_inputs_list.length > 0)"
+                    :loading="loading"
                     text="LOGIN"
                     icon="done">
                 </button->
