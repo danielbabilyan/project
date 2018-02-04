@@ -1,5 +1,4 @@
 <div class="login">
-    {{ user_data }}
     <i class="logo" style="background-image: url('./images/logo.png')"></i>
     <div class="login-box">
         <div v-show="loading" class="loading">asd</div>
@@ -8,6 +7,7 @@
             <input-
                 @update-input-data="updateInputData"
                 @update-invalid-inputs-list="updateInvalidInputsList"
+                :value="input.username"
                 :submit-button-is-clicked="submit_button_is_clicked"
                 :check-regex="[
                     { regex: /^.{4,}$/, regex_msg: 'Username must contain at least 4 characters' },
@@ -21,6 +21,7 @@
             <input-
                 @update-input-data="updateInputData"
                 @update-invalid-inputs-list="updateInvalidInputsList"
+                :value="input.password"
                 :submit-button-is-clicked="submit_button_is_clicked"
                 :check-regex="[
                     { regex: /^.{8,}$/, regex_msg: 'Password must contain at least 8 characters' },

@@ -11,8 +11,8 @@ module.exports = {
     data: function () {
         return {
             input: {
-                username: null,
-                password: null,
+                username: '',
+                password: '',
             },
             invalid_inputs_list: [],
             submit_button_is_clicked: false,
@@ -39,11 +39,13 @@ module.exports = {
                             self.user_data = data;
                         }
                         else {
-                            self.input.password = null;
+                            self.invalid_inputs_list = ['password'];
+                            self.input.password = '';
                             self.loading = false;
                         }
                     }
                 });
+                this.submit_button_is_clicked = false;
             }
         },
         updateInputData: function (type, value) {

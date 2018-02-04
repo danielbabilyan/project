@@ -6,14 +6,13 @@ module.exports = {
     template,
     data: function () {
         return {
-            value: '',
             input_msg: null,
             dirty: false,
             is_focused: false,
             invalid_regex: [],
         }
     },
-    props: ['submitButtonIsClicked', 'inputDataName', 'checkRegex', 'type', 'placeholder', 'icon'],
+    props: ['value', 'submitButtonIsClicked', 'inputDataName', 'checkRegex', 'type', 'placeholder', 'icon'],
     created: function () {
         this.checkInput(true);
     },
