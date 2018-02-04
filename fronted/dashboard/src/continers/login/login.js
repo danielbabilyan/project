@@ -28,7 +28,7 @@ module.exports = {
                 var self = this;
                 $.ajax({
                     type: 'POST',
-                    url: 'http://192.168.50.111:1234/login',
+                    url: 'http://192.168.50.111:2222/login',
                     dataType: 'json',
                     data: {
                         username: self.input.username,

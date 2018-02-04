@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 1234;
+var port = process.env.PORT || 2222;
 var path = require('path');
 var mysql = require('mysql');
 
