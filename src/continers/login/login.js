@@ -1,11 +1,12 @@
 require('./login.less');
 
+const $ = require('jquery');
 const template = require('./login.html');
 const input = require('../components/input/input');
 const button = require('../components/button/button');
 const copyright = require('../components/copyright/copyright');
 
-module.exports = {    
+module.exports = {
     template,
     data: function () {
         return {
@@ -15,14 +16,29 @@ module.exports = {
             },
             invalid_inputs_list: [],
             submit_button_is_clicked: false,
+            loading: false,
+            user_data: [],
         }
     },
     methods: {
         click: function () {
-            this.submit_button_is_clicked = true;
-            
+            this.submit_button_is_clicked = true;   
             if (!this.invalid_inputs_list.length > 0) {
-                console.log('done clicked');
+                this.loading = true;
+                var self = this;
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://192.168.50.111:1234/login',
+                    dataType: 'json',
+                    data: {
+                        username: self.input.username,
+                        password: self.input.password,
+                    },
+                    success: function (data) {
+                        self.user_data = data;
+                        self.loading = false;
+                    }
+                });
             }
         },
         updateInputData: function (type, value) {
