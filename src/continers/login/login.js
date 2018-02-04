@@ -22,7 +22,7 @@ module.exports = {
     },
     methods: {
         click: function () {
-            this.submit_button_is_clicked = true;   
+            this.submit_button_is_clicked = true;
             if (!this.invalid_inputs_list.length > 0) {
                 this.loading = true;
                 var self = this;
@@ -35,8 +35,13 @@ module.exports = {
                         password: self.input.password,
                     },
                     success: function (data) {
-                        self.user_data = data;
-                        self.loading = false;
+                        if (data.length > 0) {
+                            self.user_data = data;
+                        }
+                        else {
+                            self.input.password = null;
+                            self.loading = false;
+                        }
                     }
                 });
             }

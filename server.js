@@ -29,11 +29,9 @@ console.log('Server on port ' + port);
 app.post('/login', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
-    if ((username) && (password)) {
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        connection.query('SELECT * FROM `' + dbconfig.users_table + '` WHERE (username = "' + username + '" OR email = "' + username + '") AND password = "' + password + '" AND active = "1"', function(err, data) {
-            res.send(data);
-        });
-    }
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    connection.query('SELECT * FROM `' + dbconfig.users_table + '` WHERE (username = "' + username + '" OR email = "' + username + '") AND password = "' + password + '" AND active = "1"', function(err, data) {
+        res.send(data);
+    });
 });
 
